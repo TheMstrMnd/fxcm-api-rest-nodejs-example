@@ -43,3 +43,13 @@ load {"filename":"liveprices.js"}
 price_subscribe {"pairs":"EUR/USD"}
 price_subscribe {"pairs":["GBP/USD","USD/JPY"]}
 price_unsubscribe {"pairs":["EUR/USD","GBP/USD","USD/JPY"]}
+
+--- Trading Tables module ---
+load {"filename":"tradingtables.js"}
+
+table_subscribe {"tables":"Offer"}
+table_subscribe {"tables":["Offer","Order"]}
+table_unsubscribe {"tables":["Offer","Order"]}
+
+
+send { "method":"POST", "resource":"/trading/subscribe", "params": { "models":"Order" } }
